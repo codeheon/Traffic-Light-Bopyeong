@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>보평초 등굣길 신호등</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <h1>보평초 등굣길 신호등</h1>
+        <p class="sub">경기 성남시 보평초등학교 인근 5개 교차로 · 등교 시간 08:10 ~ 08:50</p>
+      </div>
+      <div class="clock-box">
+        <div class="clock" id="clock">--:--:--</div>
+        <div class="clock-label" id="clockLabel">한국 표준시</div>
+      </div>
+    </header>
+
+    <main class="content">
+      <aside class="panel">
+        <div class="panel-head">
+          <h2>교차로 현황</h2>
+          <div class="legend">
+            <span class="legend-item"><i class="swatch green"></i>초록불</span>
+            <span class="legend-item"><i class="swatch red"></i>빨간불</span>
+            <span class="legend-item"><i class="swatch off"></i>시간 외</span>
+          </div>
+        </div>
+
+        <ul class="site-list" id="siteList"></ul>
+
+        <div class="sim">
+          <label class="sim-toggle">
+            <input type="checkbox" id="simToggle">
+            <span>시뮬레이션 시각으로 확인</span>
+          </label>
+          <input type="range" id="simRange" min="29340" max="31860" step="1" value="29400" disabled>
+          <div class="sim-time" id="simTime">08:10:00</div>
+          <p class="sim-hint">등교 시간이 아닐 때 동작을 확인하려면 켜세요.</p>
+        </div>
+      </aside>
+
+      <div id="map"></div>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
